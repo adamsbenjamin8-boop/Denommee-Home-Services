@@ -1,49 +1,148 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Denommee Home Services</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body{
-font-family:Arial,sans-serif;
-background:#f5f7fb;
-text-align:center;
-padding:40px;
-}
-.card{
-background:white;
-padding:20px;
-border-radius:12px;
-max-width:400px;
-margin:auto;
-box-shadow:0 4px 12px rgba(0,0,0,.1);
-}
-h1{
-color:#003b7a;
-}
-.button{
-display:block;
-background:#d7192f;
-color:white;
-padding:15px;
-margin:10px 0;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-}
+body{margin:0;font-family:Arial;background:#f4f7fb;color:#111}
+.app{max-width:430px;margin:auto;background:white;min-height:100vh}
+.top{padding:25px 18px;text-align:center;border-bottom:1px solid #eee}
+.logo{font-size:34px;font-weight:900;color:#d7192f}
+.sublogo{background:#003b7a;color:white;display:inline-block;padding:4px 16px;border-radius:3px;font-weight:bold}
+.page{display:none;padding:18px 18px 90px}
+.page.active{display:block}
+h1{margin:0 0 6px;font-size:25px}
+.small{color:#667085;font-size:14px}
+.hero{background:linear-gradient(135deg,#0050a4,#002b63);color:white;border-radius:18px;padding:18px;margin:18px 0}
+.hero b{font-size:21px}
+.badge{display:inline-block;background:#d1fae5;color:#067647;border-radius:20px;padding:6px 12px;font-weight:bold;margin-top:10px}
+.card{background:white;border:1px solid #e5e7eb;border-radius:14px;padding:15px;margin:10px 0;box-shadow:0 5px 14px rgba(0,0,0,.07)}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.stat b{color:#003b7a;font-size:22px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+button{border:0;border-radius:12px;padding:15px;font-weight:900;font-size:15px}
+.red{background:#d7192f;color:white}
+.blue{background:#003b7a;color:white}
+.outline{background:white;color:#003b7a;border:1px solid #003b7a}
+.nav{position:fixed;bottom:0;left:0;right:0;max-width:430px;margin:auto;background:white;border-top:1px solid #ddd;display:grid;grid-template-columns:repeat(5,1fr);padding:8px 0}
+.nav button{background:white;color:#555;font-size:11px;padding:8px 2px}
+.nav button.active{color:#d7192f}
+.header{background:#003b7a;color:white;margin:-18px -18px 18px;padding:18px;text-align:center;font-weight:900}
+.item{display:flex;justify-content:space-between;align-items:center}
+.gold{color:#b7791f;font-weight:900}
 </style>
 </head>
 <body>
-<div class="card">
-<h1>Denommee Home Services</h1>
-<p>Customer Portal Prototype</p>
-
-<a class="button" href="#">Appointments</a>
-<a class="button" href="#">Request Service</a>
-<a class="button" href="#">Invoices</a>
-<a class="button" href="#">Memberships</a>
-
-<p>Version 1 Proof of Concept</p>
+<div class="app">
+<div class="top">
+<div class="logo">DENOMMEE</div>
+<div class="sublogo">PLUMBING • HVAC • ELECTRIC</div>
 </div>
+
+<section id="home" class="page active">
+<h1>Good Morning, John!</h1>
+<div class="small">123 Main Street, Tyngsboro, MA</div>
+<div class="hero">
+<div>UPCOMING APPOINTMENT</div><br>
+<b>Friday, June 12, 2026<br>8:00 AM – 10:00 AM</b>
+<p>Water Heater Maintenance</p>
+<span class="badge">Confirmed</span><br><br>
+<button class="outline" onclick="go('appointments')">View Details</button>
+</div>
+<div class="grid">
+<div class="card stat"><small>CURRENT BALANCE</small><br><b>$0.00</b><div class="small">No payment due</div></div>
+<div class="card stat"><small>MEMBERSHIP</small><br><b class="gold">Gold</b><div class="small">Active through Dec 31</div></div>
+<div class="card stat"><small>ESTIMATES</small><br><b>1</b><div class="small">Pending</div></div>
+</div>
+<h3>Recent Invoices</h3>
+<div class="card item"><div><b>Invoice #INV-25045</b><br><span class="small">Water Heater Flush</span></div><div><b>$189</b><br><span style="color:green">Paid</span></div></div>
+<div class="card item"><div><b>Invoice #INV-25012</b><br><span class="small">Faucet Repair</span></div><div><b>$325</b><br><span style="color:#d7192f">Due</span></div></div>
+<h3>Quick Actions</h3>
+<div class="actions">
+<button class="red" onclick="go('service')">Request Service</button>
+<button class="blue" onclick="go('invoices')">Pay Bill</button>
+<button class="outline" onclick="go('estimates')">View Estimates</button>
+<button class="outline" onclick="alert('Calling Denommee: (978) 649-8886')">Call Denommee</button>
+</div>
+</section>
+
+<section id="appointments" class="page">
+<div class="header">Appointments</div>
+<div class="card"><b>Friday, June 12, 2026</b><br><span class="small">8:00 AM – 10:00 AM</span><p>Water Heater Maintenance</p><span class="badge">Confirmed</span><br><br><button class="outline">Add to Calendar</button></div>
+<div class="card item"><div><b>Drain Cleaning</b><br><span class="small">March 18, 2026</span></div><span style="color:green">Completed</span></div>
+</section>
+
+<section id="service" class="page">
+<div class="header">Request Service</div>
+<h1>How can we help?</h1>
+<div class="card">🔧 Plumbing Repair</div>
+<div class="card">◎ Drain Cleaning</div>
+<div class="card">▣ Water Heater</div>
+<div class="card">❄ HVAC</div>
+<div class="card">⚡ Electrical</div>
+<div class="card">? Other / Not Sure</div>
+<button class="red" onclick="alert('Service request submitted for demo')">Submit Request</button>
+</section>
+
+<section id="invoices" class="page">
+<div class="header">Invoices & Payments</div>
+<div class="card item"><div><b>Invoice #INV-25045</b><br><span class="small">May 22, 2026</span></div><div><b>$189</b><br><span style="color:green">Paid</span></div></div>
+<div class="card item"><div><b>Invoice #INV-25012</b><br><span class="small">Apr 28, 2026</span></div><div><b>$325</b><br><span style="color:#d7192f">Due</span></div></div>
+<button class="red">Make a Payment</button>
+</section>
+
+<section id="estimates" class="page">
+<div class="header">Estimates</div>
+<div class="card">
+<b>Estimate #EST-45678</b>
+<h2>Tankless Water Heater Installation</h2>
+<h1 style="color:#003b7a">$6,850.00</h1>
+<div class="small">Expires June 28, 2026</div><br>
+<button class="red">Approve Estimate</button><br><br>
+<button class="outline">Ask a Question</button>
+</div>
+</section>
+
+<section id="membership" class="page">
+<div class="header">Membership</div>
+<div class="card">
+<h1 class="gold">⭐ GOLD MEMBERSHIP</h1>
+<p><b>Active Through:</b><br>December 31, 2026</p>
+</div>
+<div class="card">✓ Priority Scheduling</div>
+<div class="card">✓ Annual Plumbing Inspection</div>
+<div class="card">✓ 10% Discount on Repairs</div>
+<div class="card">✓ Exclusive Member Offers</div>
+</section>
+
+<section id="profile" class="page">
+<div class="header">My Profile</div>
+<div class="card"><b>John Smith</b><br><span class="small">Customer Since 2021</span></div>
+<div class="card">☎ (978) 555-1234</div>
+<div class="card">✉ john.smith@email.com</div>
+<div class="card">⌖ 123 Main Street, Tyngsboro, MA</div>
+<div class="card">🔔 Notification Preferences</div>
+<div class="card">💳 Payment Methods</div>
+<div class="card">? Help & Support</div>
+</section>
+
+<div class="nav">
+<button onclick="go('home')" class="active">Home</button>
+<button onclick="go('appointments')">Appts</button>
+<button onclick="go('service')">Service</button>
+<button onclick="go('invoices')">Invoices</button>
+<button onclick="go('profile')">More</button>
+</div>
+</div>
+
+<script>
+function go(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+event.target.classList.add('active');
+window.scrollTo(0,0);
+}
+</script>
 </body>
 </html>
