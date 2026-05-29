@@ -3,11 +3,44 @@
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Denommee Home Services</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Denommee Home Services">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#003b7a">
+<link rel="manifest" href="manifest.json">
 <style>
 body{margin:0;font-family:Arial;background:#f4f7fb;color:#111}
 .app{max-width:430px;margin:auto;background:white;min-height:100vh}
 .top{padding:25px 18px;text-align:center;border-bottom:1px solid #eee}
 .logo{font-size:34px;font-weight:900;color:#d7192f}
+.logo-row{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+}
+.app-icon{
+width:56px;
+height:56px;
+border-radius:14px;
+background:linear-gradient(135deg,#0050a4,#002b63);
+color:white;
+font-size:38px;
+font-weight:900;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+.app-icon span{
+position:absolute;
+width:14px;
+height:22px;
+background:#d7192f;
+border-radius:50% 50% 55% 55%;
+right:12px;
+top:18px;
+}
 .sublogo{background:#003b7a;color:white;display:inline-block;padding:4px 16px;border-radius:3px;font-weight:bold}
 .page{display:none;padding:18px 18px 90px}
 .page.active{display:block}
@@ -35,8 +68,13 @@ button{border:0;border-radius:12px;padding:15px;font-weight:900;font-size:15px}
 <body>
 <div class="app">
 <div class="top">
-<div class="logo">DENOMMEE</div>
-<div class="sublogo">PLUMBING • HVAC • ELECTRIC</div>
+<div class="logo-row">
+  <div class="app-icon">D<span></span></div>
+  <div>
+    <div class="logo">DENOMMEE</div>
+    <div class="sublogo">PLUMBING • HVAC • ELECTRIC</div>
+  </div>
+</div>
 </div>
 
 <section id="home" class="page active">
