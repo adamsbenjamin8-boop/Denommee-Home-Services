@@ -13,7 +13,13 @@
 <style>
 body{margin:0;font-family:Arial;background:#f4f7fb;color:#111}
 .app{max-width:430px;margin:auto;background:white;min-height:100vh}
-.top{padding:25px 18px;text-align:center;border-bottom:1px solid #eee}
+.top{
+padding:18px 18px 14px;
+text-align:center;
+border-bottom:1px solid #e5e7eb;
+box-shadow:0 4px 14px rgba(0,0,0,.04);
+background:white;
+}
 .logo{font-size:34px;font-weight:900;color:#d7192f}
 .logo-row{
 display:flex;
@@ -60,8 +66,25 @@ button{border:0;border-radius:12px;padding:15px;font-weight:900;font-size:15px}
 .blue{background:#003b7a;color:white}
 .outline{background:white;color:#003b7a;border:1px solid #003b7a}
 .nav{position:fixed;bottom:0;left:0;right:0;max-width:430px;margin:auto;background:white;border-top:1px solid #ddd;display:grid;grid-template-columns:repeat(5,1fr);padding:8px 0}
-.nav button{background:white;color:#555;font-size:11px;padding:8px 2px}
-.nav button.active{color:#d7192f}
+.nav button{
+background:white;
+color:#667085;
+font-size:11px;
+padding:7px 2px;
+font-weight:800;
+}
+.nav button.active{
+color:#d7192f;
+}
+.nav button.active::before{
+content:"";
+display:block;
+width:24px;
+height:3px;
+background:#d7192f;
+border-radius:99px;
+margin:0 auto 4px;
+}
 .header{background:#003b7a;color:white;margin:-18px -18px 18px;padding:18px;text-align:center;font-weight:900}
 .item{display:flex;justify-content:space-between;align-items:center}
 .gold{color:#b7791f;font-weight:900}
